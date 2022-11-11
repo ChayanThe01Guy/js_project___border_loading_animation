@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23242a;
+}
+
+.container {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #fff;
+}
+
+.container.active {
+    background: #000;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    background-image: conic-gradient(transparent, transparent, transparent, #fff);
+    animation: animate 4s linear infinite;
+} 
+
+.container.active::before {
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+span {
+    position: absolute;
+    height: 440px;
+    width: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-weight: 500;
+    color: #fff;
+    background: #131221;
+    border-radius: 12px;
+}
